@@ -7,7 +7,6 @@ export const beefyfinance = {
   rewarder: '0xb542E27732a390f509fD1FF6844a8386fe320f7f',
   treasurer: '0xb542E27732a390f509fD1FF6844a8386fe320f7f',
   launchpoolOwner: '0xb542E27732a390f509fD1FF6844a8386fe320f7f',
-  devMultisig,
   rewardPool: '0x57689D22256CE11862F302d0FFc4C8688F5C4CE9',
   treasury: '0xFb5246e80D7699a83337cE9A6991e09a917d5a5b',
   beefyFeeRecipient: '0x7913D2323240200E8B09EdeaCC290a12e7ee0eb7',

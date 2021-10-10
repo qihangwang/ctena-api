@@ -70,7 +70,7 @@ const MULTICHAIN_RPC: Record<ChainId, string> = {
 };
 
 const BSC_VAULTS_ENDPOINT =
-  'https://raw.githubusercontent.com/catenaprotocol/vault-app/main/src/features/configure/vault/bsc_pools.js';
+  'https://raw.githubusercontent.com/catenaprotocol/ctena-vault/main/src/features/configure/vault/bsc_pools.js';
 const HECO_VAULTS_ENDPOINT =
   'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/heco_pools#.js';
 const AVAX_VAULTS_ENDPOINT =
