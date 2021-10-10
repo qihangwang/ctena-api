@@ -55,7 +55,7 @@ const getRewardsReceived = async () => {
     fromBlock = toBlock;
   }
 
-  console.log('> getRewardsReceived', lastBlock, result.toFixed());
+  console.log('> getRewardsReceived', lastBlock, result.toFixed(18));
 
   return Number(result.dividedBy('1e18'));
 };
