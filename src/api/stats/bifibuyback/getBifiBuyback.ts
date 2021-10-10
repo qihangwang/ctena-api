@@ -50,7 +50,7 @@ const getBuyback = async (
   for (const entry of json.result) {
     // actually should use the lp pool data here instead of address-book. Will change after converging address-book and api
     if (entry.from === bifiLpAddress.toLowerCase()) {
-      const tokenAmount = new BigNumber(entry.value).dividedBy(getEDecimals(CTENA.decimals));
+      const tokenAmount = new BigNumber(entry.value).dividedBy(getEDecimals(BIFI.decimals));
       bifiBuybackTokenAmount = bifiBuybackTokenAmount.plus(tokenAmount);
       txCount += 1;
     }
