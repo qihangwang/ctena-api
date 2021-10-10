@@ -13,6 +13,8 @@ import { bifiLpMap } from './bifiLpMap';
 const INIT_DELAY = 40 * 1000;
 const REFRESH_INTERVAL = 15 * 60 * 1000;
 
+const rewardPoolAddress = "0x57689D22256CE11862F302d0FFc4C8688F5C4CE9"
+
 export interface DailyBifiBuybackStats {
   buybackTokenAmount: BigNumber;
   buybackUsdAmount: BigNumber;
@@ -43,7 +45,7 @@ const getBuyback = async (
 ): Promise<{ [key: string]: BigNumber }> => {
   let bifiBuybackTokenAmount = new BigNumber(0);
   const [startBlock, endBlock] = await getOneDayBlocksFromEtherscan(scanUrl, apiToken);
-  const url = `${scanUrl}/api?module=account&action=tokentx&address=${bifiMaxiAddress}&startblock=${startBlock}&endblock=${endBlock}&sort=asc&apikey=${apiToken}`;
+  const url = `${scanUrl}/api?module=account&action=tokentx&address=${rewardPoolAddress}&startblock=${startBlock}&endblock=${endBlock}&sort=asc&apikey=${apiToken}`;
   const resp = await fetch(url);
   const json: ERC20TxApiResponse = await resp.json();
   let txCount = 0;
@@ -73,8 +75,8 @@ const updateBifiBuyback = async () => {
       const { url, apiToken } = etherscanApiUrlMap[chainName];
       const lp = bifiLpMap[chainName];
       const chainAddressBook = addressBook[chainName];
-      const chainBIFI = chainAddressBook.tokens.CTENA;
-      const chainBifiMaxi = chainAddressBook.platforms.beefyfinance.bifiMaxiStrategy;
+      const chainBIFI = chainAddressBook.tokens.BIFI;
+      const chainBifiMaxi = chainAddressBook.platforms.beefyfinance.rewardPool;
       const prom = getBuyback(chainName, url, apiToken, chainBIFI, chainBifiMaxi, lp);
       promises.push(prom);
     });
