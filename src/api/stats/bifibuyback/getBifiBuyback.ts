@@ -37,7 +37,7 @@ const getBuyback = async (
   chainName: string,
   scanUrl: string,
   apiToken: string,
-  CTENA: any, // TODO type this with brknrobot's address book types, once merged
+  BIFI: any, // TODO type this with brknrobot's address book types, once merged
   bifiMaxiAddress: string,
   bifiLpAddress: string
 ): Promise<{ [key: string]: BigNumber }> => {
