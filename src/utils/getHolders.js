@@ -5,7 +5,7 @@ const getHolders = async () => {
 
   try {
     let response = await axios.get(
-      'https://beefy-vote-api.herokuapp.com/api/0xCa3F508B8e4Dd382eE878A314789373D80A5190A/snapshot/holders'
+      'https://beefy-vote-api.herokuapp.com/api/0x8f4fc37bff97e6e7fd4355a5df76a486ac1e2e1c/snapshot/holders'
     );
 
     const ipfsHash = response.data['holders'];
