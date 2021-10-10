@@ -39,7 +39,7 @@ const getBuyback = async (
   chainName: string,
   scanUrl: string,
   apiToken: string,
-  BIFI: any, // TODO type this with brknrobot's address book types, once merged
+  CTENA: any, // TODO type this with brknrobot's address book types, once merged
   bifiMaxiAddress: string,
   bifiLpAddress: string
 ): Promise<{ [key: string]: BigNumber }> => {
@@ -52,7 +52,7 @@ const getBuyback = async (
   for (const entry of json.result) {
     // actually should use the lp pool data here instead of address-book. Will change after converging address-book and api
     if (entry.from === bifiLpAddress.toLowerCase()) {
-      const tokenAmount = new BigNumber(entry.value).dividedBy(getEDecimals(BIFI.decimals));
+      const tokenAmount = new BigNumber(entry.value).dividedBy(getEDecimals(CTENA.decimals));
       bifiBuybackTokenAmount = bifiBuybackTokenAmount.plus(tokenAmount);
       txCount += 1;
     }
@@ -75,7 +75,7 @@ const updateBifiBuyback = async () => {
       const { url, apiToken } = etherscanApiUrlMap[chainName];
       const lp = bifiLpMap[chainName];
       const chainAddressBook = addressBook[chainName];
-      const chainBIFI = chainAddressBook.tokens.BIFI;
+      const chainBIFI = chainAddressBook.tokens.CTENA;
       const chainBifiMaxi = chainAddressBook.platforms.beefyfinance.rewardPool;
       const prom = getBuyback(chainName, url, apiToken, chainBIFI, chainBifiMaxi, lp);
       promises.push(prom);
