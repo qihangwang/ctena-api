@@ -4,7 +4,7 @@ const ERC20 = require('../abis/ERC20.json');
 const getBlockNumber = require('../utils/getBlockNumber');
 const { sleep } = require('../utils/time');
 
-const QUERY_RANGE = 100;
+const QUERY_RANGE = 1000;
 
 const getDailyEarnings = async () => {
   const provider = new ethers.providers.JsonRpcProvider(BSC_RPC);
