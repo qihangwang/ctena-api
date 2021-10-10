@@ -1,6 +1,6 @@
 import { ChainId } from '../packages/address-book/address-book';
 
-const API_BASE_URL = process.env.API_BASE_URL || 'http://161.97.157.244:3001';
+const API_BASE_URL = process.env.API_BASE_URL || 'http://161.97.157.244:3000';
 
 const BASE_HPY = 2190;
 const MINUTELY_HPY = 525600;
