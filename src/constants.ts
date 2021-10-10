@@ -1,6 +1,6 @@
 import { ChainId } from '../packages/address-book/address-book';
 
-const API_BASE_URL = process.env.API_BASE_URL || 'http://161.97.157.244:3000';
+const API_BASE_URL = process.env.API_BASE_URL || 'localhost:3000';
 
 const BASE_HPY = 2190;
 const MINUTELY_HPY = 525600;
@@ -70,7 +70,7 @@ const MULTICHAIN_RPC: Record<ChainId, string> = {
 };
 
 const BSC_VAULTS_ENDPOINT =
-  'https://raw.githubusercontent.com/catenaprotocol/vault-app/main/src/features/configure/vault/bsc_pools.js';
+  'https://raw.githubusercontent.com/catenaprotocol/ctena-vault/main/src/features/configure/vault/bsc_pools.js';
 const HECO_VAULTS_ENDPOINT =
   'https://raw.githubusercontent.com/beefyfinance/beefy-app/prod/src/features/configure/vault/heco_pools#.js';
 const AVAX_VAULTS_ENDPOINT =
