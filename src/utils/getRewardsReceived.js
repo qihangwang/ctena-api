@@ -6,7 +6,7 @@ const getBlockNumber = require('./getBlockNumber');
 
 const { getTopicFromSignature, getTopicFromAddress, getValueFromData } = require('./topicHelpers');
 
-const RPC_QUERY_LIMIT = 1000;
+const RPC_QUERY_LIMIT = 100;
 const RPC_QUERY_INTERVAL = 50;
 const RPC_QUERY_RETRY = 30 * 1000;
 const FIRST_REWARD_BLOCK = 11620952;
