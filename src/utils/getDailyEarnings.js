@@ -47,6 +47,10 @@ const getDailyEarnings = async () => {
     // divide twice to avoid overflow error, 1e16 so we can have 2 decimal places in response
     console.log(totalEarnings.toNumber())
     let result = totalEarnings.div(1e9).div(1e7);
+    console.log(result)
+    console.log(result.toNumber(9))
+    console.log(result.toNumber())
+    console.log(result.toNumber()/100)
 
 
     return {
